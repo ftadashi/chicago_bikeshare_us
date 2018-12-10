@@ -52,6 +52,14 @@ input("Press Enter to continue...")
 # TASK 3
 # TODO: Create a function to add the columns(features) of a list in another list in the same order
 def column_to_list(data, index):
+    """
+    Extract one column of List with List.
+    Args:
+        data: List of lists.
+        index: index of column to extract.
+    Returns:
+        List of values.
+    """
     column_list = []
     # Tip: You can use a for to iterate over the samples, get the feature by index and append into a list
     for d in data:
@@ -94,6 +102,13 @@ input("Press Enter to continue...")
 # TODO: Create a function to count the genders. Return a list
 # Should return a list with [count_male, counf_female] (e.g., [10, 15] means 10 Males, 15 Females)
 def count_gender(data_list):
+    """
+    Count gender of list.
+    Args:
+        data_list: List of elements.
+    Returns:
+        Tuple with values [Males, Females].
+    """
     male = 0
     female = 0
     list_gender = column_to_list(data_list, -2)
@@ -117,6 +132,13 @@ input("Press Enter to continue...")
 # TODO: Create a function to get the most popular gender and print the gender as string.
 # We expect to see "Male", "Female" or "Equal" as answer.
 def most_popular_gender(data_list):
+    """
+    Show the most popular gender.
+    Args:
+        data_list: List of elements.
+    Returns:
+        String with name most popular (Male, Female or Equal).
+    """
     answer = ""
     genders = count_gender(data_list)
     if genders[0] > genders[1]:
@@ -154,6 +176,13 @@ input("Press Enter to continue...")
 print("\nTASK 7: Check the chart!")
 
 def count_user_type(data_list):
+    """
+    Count the user type of list.
+    Args:
+        data_list: List of elements.
+    Returns:
+        Tuple with values [Customer, Subscriber].
+    """
     customer = 0
     subscriber = 0
     list_gender = column_to_list(data_list, -3)
@@ -226,5 +255,19 @@ print(user_types)
 # ------------ DO NOT CHANGE ANY CODE HERE ------------
 assert len(user_types) == 582, "TASK 10: Wrong len of start stations."
 # -----------------------------------------------------
+
+input("Press Enter to continue...")
+# TASK 11
+# Go back and make sure you documented your functions. Explain the input, output and what it do. Example:
+# def new_function(param1: int, param2: str) -> list:
+#      """
+#      Example function with annotations.
+#      Args:
+#          param1: The first parameter.
+#          param2: The second parameter.
+#      Returns:
+#          List of X values
+#
+#      """
 
 input("Press Enter to continue...")
