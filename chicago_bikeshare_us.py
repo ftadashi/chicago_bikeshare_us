@@ -148,3 +148,28 @@ plt.title('Quantity by Gender')
 plt.show(block=True)
 
 input("Press Enter to continue...")
+# TASK 7
+# TODO: Plot a similar graph for user_types. Make sure the legend is correct.
+print("\nTASK 7: Check the chart!")
+
+def count_user_type(data_list):
+    customer = 0
+    subscriber = 0
+    list_gender = column_to_list(data_list, -3)
+    customer = list_gender.count('Customer')
+    subscriber = list_gender.count('Subscriber')
+    return [customer, subscriber]
+
+user_type_list = column_to_list(data_list, -3)
+types = ["Customer", "Subscriber"]
+quantity = count_user_type(data_list)
+y_pos = list(range(len(types)))
+plt.bar(y_pos, quantity)
+plt.ylabel('Quantity')
+plt.xlabel('User Type')
+plt.xticks(y_pos, types)
+plt.title('Quantity by User Type')
+plt.show(block=True)
+
+
+input("Press Enter to continue...")
