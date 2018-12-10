@@ -4,6 +4,7 @@
 # Here goes the imports
 import csv
 import matplotlib.pyplot as plt
+import statistics
 
 # Let's read the data as a list
 print("Reading the document...")
@@ -188,5 +189,27 @@ assert answer != "Type your answer here.", "TASK 8: Write your own answer!"
 male, female, empty_gender = gender_list.count('Male'), gender_list.count('Female'), gender_list.count('')
 
 assert male + female + empty_gender == len(data_list), 'Sun of all values of genders.'
+
+input("Press Enter to continue...")
+# Let's work with the trip_duration now. We cant get some values from it.
+# TASK 9
+# TODO: Find the Minimum, Maximum, Mean and Median trip duration.
+# You should not use ready functions to do that, like max() or min().
+trip_duration_list = list(map(int, column_to_list(data_list, 2)))
+min_trip = min(trip_duration_list)
+max_trip = max(trip_duration_list)
+mean_trip = statistics.mean(trip_duration_list)
+median_trip = statistics.median(trip_duration_list)
+
+
+print("\nTASK 9: Printing the min, max, mean and median")
+print("Min: ", min_trip, "Max: ", max_trip, "Mean: ", mean_trip, "Median: ", median_trip)
+
+# ------------ DO NOT CHANGE ANY CODE HERE ------------
+assert round(min_trip) == 60, "TASK 9: min_trip with wrong result!"
+assert round(max_trip) == 86338, "TASK 9: max_trip with wrong result!"
+assert round(mean_trip) == 940, "TASK 9: mean_trip with wrong result!"
+assert round(median_trip) == 670, "TASK 9: median_trip with wrong result!"
+# -----------------------------------------------------
 
 input("Press Enter to continue...")
