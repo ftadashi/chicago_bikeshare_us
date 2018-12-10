@@ -88,3 +88,26 @@ assert male == 935854 and female == 298784, "TASK 4: Count doesn't match."
 # -----------------------------------------------------
 
 input("Press Enter to continue...")
+# Why don't we creeate a function to do that?
+# TASK 5
+# TODO: Create a function to count the genders. Return a list
+# Should return a list with [count_male, counf_female] (e.g., [10, 15] means 10 Males, 15 Females)
+def count_gender(data_list):
+    male = 0
+    female = 0
+    list_gender = column_to_list(data_list, -2)
+    male = list_gender.count('Male')
+    female = list_gender.count('Female')
+    return [male, female]
+
+
+print("\nTASK 5: Printing result of count_gender")
+print(count_gender(data_list))
+
+# ------------ DO NOT CHANGE ANY CODE HERE ------------
+assert type(count_gender(data_list)) is list, "TASK 5: Wrong type returned. It should return a list."
+assert len(count_gender(data_list)) == 2, "TASK 5: Wrong lenght returned."
+assert count_gender(data_list)[0] == 935854 and count_gender(data_list)[1] == 298784, "TASK 5: Returning wrong result!"
+# -----------------------------------------------------
+
+input("Press Enter to continue...")
