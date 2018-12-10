@@ -26,3 +26,16 @@ print("Row 1: ")
 print(data_list[1])
 
 input("Press Enter to continue...")
+# TASK 1
+# TODO: Print the first 20 rows using a loop to identify the data.
+print("\n\nTASK 1: Printing the first 20 samples")
+for data_index, data_element in enumerate(data_list[:20]):
+    print('Line {}: {}'.format(data_index+1, data_element))
+
+# Let's change the data_list to remove the header from it.
+data_list = data_list[1:]
+
+# We can access the features through index
+# E.g. sample[6] to print gender or sample[-2]
+
+input("Press Enter to continue...")
