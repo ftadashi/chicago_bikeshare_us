@@ -58,3 +58,33 @@ def column_to_list(data, index):
         column_list.append(feature)
     return column_list
 
+# Let's check with the genders if it's working (only the first 20)
+print("\nTASK 3: Printing the list of genders of the first 20 samples")
+print(column_to_list(data_list, -2)[:20])
+
+# ------------ DO NOT CHANGE ANY CODE HERE ------------
+assert type(column_to_list(data_list, -2)) is list, "TASK 3: Wrong type returned. It should return a list."
+assert len(column_to_list(data_list, -2)) == 1551505, "TASK 3: Wrong lenght returned."
+assert column_to_list(data_list, -2)[0] == "" and column_to_list(data_list, -2)[1] == "Male", "TASK 3: The list doesn't match."
+# -----------------------------------------------------
+
+input("Press Enter to continue...")
+# Now we know how to access the features, let's count how many Males and Females the dataset have
+# TASK 4
+# TODO: Count each gender. You should not use a function to do that.
+male = 0
+female = 0
+
+list_gender = column_to_list(data_list, -2)
+male = list_gender.count('Male')
+female = list_gender.count('Female')
+
+# Checking the result
+print("\nTASK 4: Printing how many males and females we found")
+print("Male: ", male, "\nFemale: ", female)
+
+# ------------ DO NOT CHANGE ANY CODE HERE ------------
+assert male == 935854 and female == 298784, "TASK 4: Count doesn't match."
+# -----------------------------------------------------
+
+input("Press Enter to continue...")
