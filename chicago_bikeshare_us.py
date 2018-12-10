@@ -173,3 +173,20 @@ plt.show(block=True)
 
 
 input("Press Enter to continue...")
+# TASK 8
+# TODO: Answer the following question
+male, female = count_gender(data_list)
+print("\nTASK 8: Why the following condition is False?")
+print("male + female == len(data_list):", male + female == len(data_list))
+answer = "Because are empty values for gender column."
+print("Answer:", answer)
+
+# ------------ DO NOT CHANGE ANY CODE HERE ------------
+assert answer != "Type your answer here.", "TASK 8: Write your own answer!"
+# -----------------------------------------------------
+
+male, female, empty_gender = gender_list.count('Male'), gender_list.count('Female'), gender_list.count('')
+
+assert male + female + empty_gender == len(data_list), 'Sun of all values of genders.'
+
+input("Press Enter to continue...")
