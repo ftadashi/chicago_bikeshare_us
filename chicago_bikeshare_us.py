@@ -39,3 +39,12 @@ data_list = data_list[1:]
 # E.g. sample[6] to print gender or sample[-2]
 
 input("Press Enter to continue...")
+# TASK 2
+# TODO: Print the `gender` of the first 20 rows
+print("\nTASK 2: Printing the genders of the first 20 samples")
+for data_index, data_element in enumerate(data_list[:20]):
+    print('Line {}: {}'.format(data_index+1, data_element[-2]))
+# Cool! We can get the rows(samples) iterating with a for and the columns(features) by index.
+# But it's still hard to get a column in a list. Example: List with all genders
+
+input("Press Enter to continue...")
