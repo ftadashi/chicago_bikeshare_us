@@ -48,3 +48,13 @@ for data_index, data_element in enumerate(data_list[:20]):
 # But it's still hard to get a column in a list. Example: List with all genders
 
 input("Press Enter to continue...")
+# TASK 3
+# TODO: Create a function to add the columns(features) of a list in another list in the same order
+def column_to_list(data, index):
+    column_list = []
+    # Tip: You can use a for to iterate over the samples, get the feature by index and append into a list
+    for d in data:
+        feature = d[index]
+        column_list.append(feature)
+    return column_list
+
