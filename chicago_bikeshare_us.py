@@ -188,10 +188,11 @@ def count_user_type(data_list):
     list_gender = column_to_list(data_list, -3)
     customer = list_gender.count('Customer')
     subscriber = list_gender.count('Subscriber')
-    return [customer, subscriber]
+    dependent = list_gender.count('Dependent')
+    return [customer, subscriber, dependent]
 
 user_type_list = column_to_list(data_list, -3)
-types = ["Customer", "Subscriber"]
+types = ["Customer", "Subscriber", "Dependent"]
 quantity = count_user_type(data_list)
 y_pos = list(range(len(types)))
 plt.bar(y_pos, quantity)
@@ -271,3 +272,25 @@ input("Press Enter to continue...")
 #      """
 
 input("Press Enter to continue...")
+# TASK 12 - Challenge! (Optional)
+# TODO: Create a function to count user types without hardcoding the types
+# so we can use this function with a different kind of data.
+print("Will you face it?")
+answer = "yes"
+
+def count_items(column_list):
+    item_types = []
+    count_items = []
+    user_types = column_to_list(column_list, -3)
+    item_types = list(set(user_types))
+    print('item_types',item_types)
+    for item in item_types:
+        count_items.append(user_types.count(item))
+    return item_types, count_items
+
+user_types_count = count_items(data_list)
+
+# ['Subscriber', 'Customer', 'Dependent'], [1234339, 317162, 4]
+assert 1234339 in user_types_count[1], 'Task 12 - Dynamic User types (Subscriber).'
+assert 317162 in user_types_count[1], 'Task 12 - Dynamic User types (Customer).'
+assert 4 in user_types_count[1], 'Task 12 - Dynamic User types (Dependent).'
