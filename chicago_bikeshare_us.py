@@ -81,12 +81,26 @@ input("Press Enter to continue...")
 # Now we know how to access the features, let's count how many Males and Females the dataset have
 # TASK 4
 # TODO: Count each gender. You should not use a function to do that.
+def count_items(items):
+    """
+    Count number of items on list.
+    Args:
+        items: List of itens to count.
+    Returns:
+        Dictionary with number of each element.
+    """
+    counts = dict()
+    for item in items:
+        counts[item] = counts.get(item, 0) + 1
+    return counts
+
 male = 0
 female = 0
 
 list_gender = column_to_list(data_list, -2)
-male = list_gender.count('Male')
-female = list_gender.count('Female')
+count_gender = count_items(list_gender)
+male = count_gender.get('Male')
+female = count_gender.get('Female')
 
 # Checking the result
 print("\nTASK 4: Printing how many males and females we found")
